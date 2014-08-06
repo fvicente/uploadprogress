@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?> 
+<?xml-stylesheet href="chrome://uploadprogress/content/uploads.css"?>
+<?xml-stylesheet href="chrome://uploadprogress/skin/uploads.css"?>
+
+<!DOCTYPE window [
+<!ENTITY % uploadManagerDTD SYSTEM "chrome://uploadprogress/locale/uploads.dtd">
+%uploadManagerDTD;
+]>
+
+<window xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="uploadManager" windowtype="Upload:Manager"
+        orient="vertical" title="&uploads.title;" statictitle="&uploads.title;"
+        width="&window.width2;" height="&window.height;"
+		screenX="10" screenY="10"
+		persist="width height screenX screenY sizemode"
+        onload="uploadProgressAddon.registerUploadManagerWindow(window)"
+		onunload="uploadProgressAddon.unregisterUploadManagerWindow(window)"
+        onclose="window.close();">
+  <script type="application/javascript"
+		src="chrome://uploadprogress/content/uploads.js"/>
+
+  <stringbundleset id="uploadSet">
+    <stringbundle id="brandStrings"
+		src="chrome://branding/locale/brand.properties"/>
+    <stringbundle id="uploadStrings"
+		src="chrome://uploadprogress/locale/uploads.properties"/>
+  </stringbundleset>
+
+  <keyset id="uploadKeys">
+    <key id="key_close" key="&cmd.close.commandKey;"
+		oncommand="window.close();" modifiers="accel"/>
+    <key id="key_close2" key="&cmd.close2.commandKey;"
+		oncommand="window.close();" modifiers="accel"/>
+    <key keycode="VK_ESCAPE"
+		oncommand="window.close();"/>
+  </keyset>
+
+  <menupopup id="menu_ToolsPopup">
+    <menuitem id="uploads-menu" label="&uploads.title;"
+      accesskey="&uploads.accesskey;"
+      insertafter="menu_openDownloads"
+      oncommand="uploadProgressAddon.showUploadManager()" />
+  </menupopup>
+
+  <richlistbox id="uploadView" seltype="multiple" flex="1"
+      context="uploadContextMenu">
+  </richlistbox>
+
+</window>

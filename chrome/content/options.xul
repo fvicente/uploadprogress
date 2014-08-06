@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<prefwindow id="uploadprogress-prefs"
+     title="Upload Progress options"
+     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<prefpane id="up-settings-pane" label="Settings">
+  <preferences>
+    <preference id="pref_min_upload_size" name="uploadprogress.minUploadSize" type="int"/>
+    <preference id="pref_auto_popup" name="uploadprogress.autoPopup" type="bool"/>
+    <preference id="pref_hide_progress_status_bar" name="uploadprogress.hideProgressStatusBar" type="bool"/>
+  </preferences>
+  <hbox align="center">
+    <label control="min_upload_size" value="Minimum upload size (in bytes): "/>
+    <textbox preference="pref_min_upload_size" id="min_upload_size" />
+  </hbox>
+  <hbox align="center">
+    <checkbox preference="pref_auto_popup" label="Pop-up window when an upload starts" id="auto_popup" />
+  </hbox>
+  <hbox align="center">
+    <checkbox preference="pref_hide_progress_status_bar" label="Hide progress in status bar" id="hide_progress_status_bar" />
+  </hbox>
+</prefpane>
+</prefwindow>

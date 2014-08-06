@@ -1,0 +1,12 @@
+<!-- LOCALIZATION NOTE (window.width2, window.height): These values should be
+close to the golden ratio (1.618:1) while making sure it's wide enough for long
+file names and tall enough to hint that there are more uploads in the list 
+-->
+<!ENTITY window.width2 "485">
+<!ENTITY window.height "300">
+<!ENTITY starting.label "Wird gestartet…">
+<!ENTITY uploads.title "Uploads">
+<!ENTITY uploads.accesskey "U">
+<!ENTITY cmd.close.commandKey "w">
+<!ENTITY cmd.close2.commandKey "j">
+<!ENTITY cmd.close2Unix.commandKey "y">

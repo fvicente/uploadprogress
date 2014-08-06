@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE bindings [
+  <!ENTITY % uploadDTD SYSTEM "chrome://uploadprogress/locale/uploads.dtd" >
+  %uploadDTD;
+]>
+
+<bindings id="uploadBindings"
+	xmlns="http://www.mozilla.org/xbl"
+	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	xmlns:xbl="http://www.mozilla.org/xbl">
+
+  <binding id="upload-base"
+	extends="chrome://global/content/bindings/richlistbox.xml#richlistitem">
+    <resources>
+      <stylesheet src="chrome://uploadprogress/skin/uploads.css"/>
+    </resources>
+  </binding>
+  
+  <binding id="upload-starting"
+	extends="chrome://uploadprogress/content/upload.xml#upload-base">
+    <content>
+      <xul:hbox flex="1">
+        <xul:vbox pack="center">
+          <xul:image class="uploadTypeIcon" validate="always"
+                     xbl:inherits="src=image"/>
+        </xul:vbox>
+        <xul:vbox pack="start" flex="1">
+          <xul:label xbl:inherits="value=target,tooltiptext=target"
+                     crop="center" class="name"/>
+          <xul:progressmeter mode="normal" value="0" flex="1"
+                             anonid="progressmeter"/>
+          <xul:label value="&starting.label;" class="status"/>
+          <xul:spacer flex="1"/>
+        </xul:vbox>
+      </xul:hbox>
+    </content>  
+  </binding>
+  
+  <binding id="upload-uploading"
+	extends="chrome://uploadprogress/content/upload.xml#upload-base">
+    <content>
+      <xul:hbox flex="1" class="uploadContentBox">
+        <xul:vbox pack="center">
+          <xul:image class="uploadTypeIcon" validate="always"
+                     xbl:inherits="src=image"/>
+        </xul:vbox>
+        <xul:vbox flex="1">
+          <xul:label xbl:inherits="value=target,tooltiptext=target"
+                       crop="center" flex="2" class="name"/>
+          <xul:hbox>
+            <xul:vbox flex="1">
+              <xul:progressmeter mode="normal" value="0" flex="1"
+				 anonid="progressmeter"
+				 xbl:inherits="value=progress,mode=progressmode"/>
+            </xul:vbox>
+			<xul:label xbl:inherits="value=progressString" flex="0"
+			  crop="right" />
+          </xul:hbox>
+          <xul:label xbl:inherits="value=status,tooltiptext=statusTip" flex="1"
+                     crop="right" class="status"/>
+          <xul:spacer flex="1"/>
+        </xul:vbox>
+      </xul:hbox>
+    </content>
+  </binding>
+
+</bindings>

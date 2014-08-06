@@ -1,0 +1,16 @@
+richlistitem[type="upload"] {
+  -moz-binding: url('chrome://uploadprogress/content/upload.xml#upload-starting');
+  -moz-box-orient: vertical;
+}
+
+richlistitem[type="upload"][state="0"] {
+  -moz-binding: url('chrome://uploadprogress/content/upload.xml#upload-uploading');
+}
+
+#upload-progress-button  {
+  list-style-image: url("chrome://uploadprogress/skin/uploadIconMedium.png");
+}
+
+toolbar[iconsize="small"] #upload-progress-button {
+   list-style-image: url("chrome://uploadprogress/skin/uploadIconSmall.png");
+}

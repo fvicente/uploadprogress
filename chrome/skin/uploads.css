@@ -1,0 +1,36 @@
+#uploadManager {
+  background-color: ThreeDFace;
+}
+
+/* Upload View */
+#uploadView:not(:-moz-system-metric(windows-classic)) {
+  -moz-appearance: none !important;
+  margin: 0;
+  border-bottom: 2px solid;
+  -moz-border-bottom-colors: ThreeDHighlight ThreeDLightShadow;
+}
+
+/* Upload View Items */
+richlistitem[type="upload"] {
+  padding: 4px 8px 4px 4px;
+  min-height: 46px;
+  border-bottom: 1px solid ThreeDLightShadow;
+}
+
+richlistitem[type="upload"][selected="true"] {
+  background-image: url(chrome://mozapps/skin/extensions/itemEnabledFader.png);
+}
+
+richlistitem[type="upload"] .name {
+  font-size: larger;
+}
+
+richlistitem[type="upload"] .dateTime {
+  font-size: smaller;
+}
+
+/* prevent flickering when changing states */
+.uploadTypeIcon {
+  min-height: 32px;
+  min-width: 32px;
+}

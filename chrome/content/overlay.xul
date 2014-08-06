@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?> 
+
+<!DOCTYPE window [
+<!ENTITY % uploadManagerDTD SYSTEM "chrome://uploadprogress/locale/uploads.dtd">
+%uploadManagerDTD;
+]>
+
+<overlay id="uploadsOverlay"
+		 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		 xmlns:nc="http://home.netscape.com/NC-rdf#"
+		 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <window id="main-window">
+    <stringbundleset id="stringbundleset">
+	  <stringbundle id="uploadStrings"
+		   src="chrome://uploadprogress/locale/uploads.properties"/>
+    </stringbundleset>
+	<script type="application/javascript"><![CDATA[
+		window.addEventListener("load", function() { uploadProgressAddon.uploadManager.setMainDocument(document, uploadProgressAddon) }, false); ]]>
+	</script>
+  </window>
+    <!-- Extend Firefox status bar -->
+    <statusbar id="status-bar">
+        <statusbarpanel id="upload-status" onclick="uploadProgressAddon.showUploadManager();">
+		  <image class="uploadIconSmall" validate="always"
+			 src="chrome://uploadprogress/skin/uploadIconSmall.png"/>
+		  <hbox id="upload-pb-holder" hidden="true">
+		    <progressmeter id="upload-pb" mode="normal" value="0"
+			   anonid="progressmeter" tooltiptext=""/>
+		    <label id="upload-pb-label" crop="center" class="name"/>
+          </hbox>
+        </statusbarpanel>
+    </statusbar>
+    <!-- Extend Firefox addon bar -->
+    <toolbar id="addon-bar">
+        <toolbarbutton id="upload-bar" onclick="uploadProgressAddon.showUploadManager();" 
+		  label="&uploads.title;" removable="true">
+		  <image class="uploadIconSmall" validate="always"
+			 src="chrome://uploadprogress/skin/uploadIconSmall.png"/>
+		  <hbox id="upload-pb-holder-aob" hidden="true">
+		    <progressmeter id="upload-pb-aob" mode="normal" value="0"
+			   anonid="progressmeter" tooltiptext=""/>
+		    <label id="upload-pb-label-aob" crop="center" class="name"/>
+          </hbox>
+        </toolbarbutton>
+    </toolbar>
+</overlay>

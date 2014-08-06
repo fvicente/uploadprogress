@@ -1,0 +1,18 @@
+content   uploadprogress                 chrome/content/
+skin      uploadprogress   classic/1.0   chrome/skin/
+locale    uploadprogress   de            chrome/locale/de/
+locale    uploadprogress   en-US         chrome/locale/en-US/
+locale    uploadprogress   es            chrome/locale/es-AR/
+locale    uploadprogress   fr            chrome/locale/fr/
+locale    uploadprogress   ja-JP         chrome/locale/ja-JP/
+locale    uploadprogress   pl            chrome/locale/pl/
+locale    uploadprogress   ru            chrome/locale/ru/
+locale    uploadprogress   sv-SE         chrome/locale/sv-SE/
+locale    uploadprogress   zh-CN         chrome/locale/zh-CN/
+locale    uploadprogress   pt-BR         chrome/locale/pt-BR/
+
+overlay   chrome://browser/content/browser.xul   chrome://uploadprogress/content/overlay.xul
+overlay   chrome://browser/content/browser.xul   chrome://uploadprogress/content/uploads.xul
+component {64DBCAD2-AAF0-11DF-AF22-013ADFD72085} components/uploads.js
+contract @alfersoft.com.ar/uploads-service;1 {64DBCAD2-AAF0-11DF-AF22-013ADFD72085}
+category profile-after-change Uploads @alfersoft.com.ar/uploads-service;1
