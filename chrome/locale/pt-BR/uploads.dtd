@@ -4,7 +4,7 @@ file names and tall enough to hint that there are more uploads in the list
 -->
 <!ENTITY window.width2 "485">
 <!ENTITY window.height "300">
-<!ENTITY starting.label "Inicializando…">
+<!ENTITY starting.label "Iniciando...">
 <!ENTITY uploads.title "Uploads">
 <!ENTITY uploads.accesskey "U">
 <!ENTITY cmd.close.commandKey "w">
