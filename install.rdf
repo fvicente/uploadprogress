@@ -4,7 +4,7 @@
     <em:id>fvicente@gmail.com</em:id>
     <em:type>2</em:type>
     <em:name>UploadProgress</em:name>
-    <em:version>0.9</em:version>
+    <em:version>0.91</em:version>
     <em:creator>Fernando Vicente</em:creator>
     <em:contributor></em:contributor>
     <em:description>Displays the progress of the current uploads</em:description>
